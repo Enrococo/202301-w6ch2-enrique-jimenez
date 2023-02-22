@@ -9,8 +9,11 @@ const app = express();
 const port = process.env.PORT ?? 3000;
 
 app.get('/', (req, res) => {
-  res.json({ hello: 'World' });
+  res.json(
+    'HOLA! si quieres ver lo que he aprendido en el bootcamp, dirígete a https://two02301-w6ch2-enrique-jimenez.onrender.com/api/v1/things',
+  );
 });
+
 app.use(express.json());
 app.use('/api/v1', apiRouter);
 
