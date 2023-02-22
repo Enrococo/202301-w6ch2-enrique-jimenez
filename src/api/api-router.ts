@@ -1,8 +1,8 @@
 import express from 'express';
-import studentsRouter from './students/students-router.js';
+import thingsRouter from './things-I-know/things-router.js';
 
 const router = express.Router();
 
-router.use('/students', studentsRouter);
+router.use('/things', thingsRouter);
 
 export default router;
