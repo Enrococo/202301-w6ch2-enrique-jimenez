@@ -6,6 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "jest",
+    "build": "tsc",
+    "start": "node dist/index.js",
     "prepare": "husky install",
     "-----": "---------CI----------",
     "ci:test": "npm test -- --coverage --watchAll=false"
