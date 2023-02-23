@@ -1,6 +1,12 @@
 import crypto from 'node:crypto';
 import { RequestHandler } from 'express';
-import { createThing, findAll, findById, Thing } from './things-model.js';
+import {
+  createThing,
+  deleteById,
+  findAll,
+  findById,
+  Thing,
+} from './things-model.js';
 
 export const getThingsController: RequestHandler = (_req, res) => {
   res.json(findAll());
@@ -31,5 +37,8 @@ export const updateThingsByIdController: RequestHandler = (req, res) => {
 };
 
 export const deleteThingsByIdController: RequestHandler = (req, res) => {
-  res.sendStatus(405);
+  const { id } = req.params;
+  deleteById(id);
+  res.sendStatus(201);
+  res.json('Elemento borrado');
 };
