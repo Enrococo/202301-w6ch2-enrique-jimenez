@@ -20,3 +20,8 @@ export const createThing = (newThing: Thing) => {
 
   things.push(newThing);
 };
+
+export const deleteById = (id: string) => {
+  const index = things.findIndex(thing => thing.id === id);
+  things.splice(index, 1);
+};
